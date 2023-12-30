@@ -66,13 +66,13 @@ npm install leaflet
 export const prerender = false;
 ```
 ## PWA
-### manifest.json to static folder
+### add manifest.json to static folder
 ```json
 {
 	"id": "ffd-A08-pwa App",
 	"short_name": "A08",
-	"start_url": "/",
-	"scope": "/",
+	"start_url": "/A08/",
+	"scope": "/A08/",
 	"display": "standalone",
 	"orientation": "portrait",
 	"theme_color": "#A3E635",
@@ -93,15 +93,21 @@ export const prerender = false;
 	]
 }
 ```
-### app.html insert link
+### add manifest link to app.html
 ```html
-<head>
+<!doctype html>
+<html lang="en">
+	<head>
 		<meta charset="utf-8" />
 		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
-		<title>A08</title>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<title>A08</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
 ```
 ### add service-worker.js to scr folder
