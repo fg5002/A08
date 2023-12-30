@@ -1,0 +1,45 @@
+<script>
+  import Leaflet from "$lib/Leaflet.svelte";
+  import Scale from '$lib/Scale.svelte';
+  import Layers from "$lib/Layers.svelte";
+  import TileLayer from "$lib/TileLayer.svelte";
+
+</script>
+
+
+<Leaflet>
+                  
+  <Layers>      
+    <TileLayer
+      name={'OSM'}
+      url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'}
+      options={{ minZoom: 7, maxZoom: 19, attribution: '&copy; OpenstreetMap'}}
+      selected
+    />        
+    <TileLayer
+      name={'Google'}
+      url={'https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga'}
+      options={{ minZoom: 7, maxZoom: 21, attribution: '&copy; Google Maps'}}
+    />
+    <TileLayer
+      name={'ArcGIS'}
+      url={'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.jpg'}
+      options={{ minZoom: 7, maxZoom: 19, attribution: '&copy; ArcGIS'}}
+    />    
+    <TileLayer
+      name={'Esri'}
+      url={'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'}
+      options={{ minZoom: 7, maxZoom: 19, attribution: '&copy; ESRI'}}
+    />
+    <TileLayer
+      name={'Túristautak'}
+      url={'https://{s}.map.turistautak.hu/tiles/turistautak/{z}/{x}/{y}.png'}
+      options={{ minZoom:7, maxZoom:18, attribution: '&copy; Túristautak.hu'}}
+    />   
+  
+  </Layers>
+    
+  <Scale/>
+    
+</Leaflet>
+  
