@@ -1,5 +1,9 @@
 <script>
 	import '../app.pcss';
+  import Navbar from '$lib/Navbar.svelte';
 </script>
 
-<slot />
+<div class="flex flex-col h-screen w-screen">
+  <Navbar/>
+  <slot />
+</div>
