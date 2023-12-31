@@ -56,7 +56,7 @@ export default config;
 export const prerender = true;
 export const ssr = false;
 ```
-## Map
+## Map page
 ### Install
 ```bash
 npm install leaflet
@@ -66,6 +66,7 @@ npm install leaflet
 export const prerender = false;
 ```
 ## PWA
+### add icons folder to static folder
 ### add manifest.json to static folder
 ```json
 {
@@ -111,4 +112,6 @@ export const prerender = false;
 </html>
 ```
 ### add service-worker.js to scr folder
-https://kit.svelte.dev/docs/service-workers
+- https://kit.svelte.dev/docs/service-workers
+### add .github/workflows/deploy.yml to project
+- https://kit.svelte.dev/docs/adapter-static
