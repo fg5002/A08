@@ -1,8 +1,8 @@
-# A08 install
+# Offline-first PWA for Github actions
 ### Install Sveltekit
 ```bash
-npm create svelte@latest A08
-cd A08
+npm create svelte@latest |repo name|
+cd |repo name|
 npm install
 ```
 ### Install Tailwind
@@ -19,7 +19,7 @@ git branch -M main
 ```
 ### Add remote repo
 ```bash
-git remote add origin git@github.com:fg5002/A08.git
+git remote add origin git@github.com:|user name|/|repo name|.git
 ```
 ### Upload to Github Pages
 ```bash
@@ -69,10 +69,10 @@ export const prerender = false;
 ### add manifest.json to static folder
 ```json
 {
-	"id": "ffd-A08-pwa App",
-	"short_name": "A08",
-	"start_url": "/A08/",
-	"scope": "/A08/",
+	"id": "Long |repo name|",
+	"short_name": "|repo name|",
+	"start_url": "/|repo name|/",
+	"scope": "/|repo name|/",
 	"display": "standalone",
 	"orientation": "portrait",
 	"theme_color": "#A3E635",
@@ -101,7 +101,7 @@ export const prerender = false;
 		<meta charset="utf-8" />
 		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<title>A08</title>
+		<title>|repo name|</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
@@ -111,3 +111,4 @@ export const prerender = false;
 </html>
 ```
 ### add service-worker.js to scr folder
+https://kit.svelte.dev/docs/service-workers
