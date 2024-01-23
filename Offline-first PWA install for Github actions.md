@@ -1,23 +1,26 @@
 # Offline-first PWA for Github actions
-### Install Sveltekit
+## Install Sveltekit
 ```bash
 npm create svelte@latest |repo name|
 cd |repo name|
 npm install
 ```
-### Install Tailwind
+---
+## Install Tailwind
 ```bash
 npx svelte-add@latest tailwindcss
 npm install
 ```
-### Init Git
+---
+## Git
+### Init
 ```bash
 git init
 git add .
 git commit -m "first commit"
 git branch -M main
 ```
-### Add remote repo
+### Add to remote repo
 ```bash
 git remote add origin git@github.com:|user name|/|repo name|.git
 ```
@@ -27,6 +30,7 @@ git commit -a -m "commit..."
 npm run build
 git push -u origin main
 ```
+---
 ## Adapter-static
 ### Install
 ```bash
@@ -44,12 +48,12 @@ const config = {
 			fallback: '404.html'
 		})
 	},
-
 	preprocess: [vitePreprocess({})]
 };
 
 export default config;
 ```
+---
 ## Main page
 ### +layout.js
 ```js
@@ -65,6 +69,7 @@ npm install leaflet
 ```js
 export const prerender = false;
 ```
+---
 ## PWA
 ### add icons folder to static folder
 ### add manifest.json to static folder

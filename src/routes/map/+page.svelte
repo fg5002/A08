@@ -3,6 +3,8 @@
   import Scale from '$lib/Scale.svelte';
   import Layers from "$lib/Layers.svelte";
   import TileLayer from "$lib/TileLayer.svelte";
+  import GeoJson from "$lib/GeoJson.svelte";
+  import {CT55B2} from '$lib/store';
 
 </script>
 
@@ -25,7 +27,9 @@
       name={'Túristautak'}
       url={'https://{s}.map.turistautak.hu/tiles/turistautak/{z}/{x}/{y}.png'}
       options={{ minZoom:7, maxZoom:18, attribution: '&copy; Túristautak.hu'}}
-    />   
+    />
+
+    <GeoJson name={"GPS"} data={$CT55B2}/>
   
   </Layers>
     

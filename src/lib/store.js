@@ -1,8 +1,8 @@
 import {writable, derived} from 'svelte/store';
 
 export const mapState = writable({
-  center: [47.385599,19.036925],
-  zoom : 16,
+  center: [47.397,19.025644],
+  zoom : 14,
   baselayer: "OSM",
   //overlays: ["Taxon", "Geo", "Query"]
   overlays: ["Query", "Temp"]
@@ -24,6 +24,287 @@ export const controlGeo = writable({
   "type": "FeatureCollection",
   "features": []
 });
+
+
+export const CT55B2 = writable({
+  "type": "FeatureCollection",
+  "features": [  
+    {  
+      "type":"Feature",
+      "properties":{
+        "name":"CT55B2"
+      },
+      "geometry":{
+        "type": "Polygon",
+        "coordinates":[[[19.010101,47.408354],[19.010947,47.385873],[19.04405,47.386443],[19.043218,47.408925],[19.010101,47.408354]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0134994657,47.4061643368 ]
+      },
+      "properties": {
+        "name":"CT55B2-1",
+        type: 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.020122453,47.4062784394 ]
+      },
+      "properties": {
+        "name":"CT55B2-2",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0267454404,47.4063925418 ]
+      },
+      "properties": {
+        "name":"CT55B2-3",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0333684278,47.406506644 ]
+      },
+      "properties": {
+      "name":"CT55B2-4",
+      "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0399924154,47.4066197461 ]
+      },
+      "properties": {
+        "name":"CT55B2-5",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0136686105,47.4016673098 ]
+      },
+      "properties": {
+        "name":"CT55B2-6",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0202905978,47.4017824123 ]
+      },
+      "properties": {
+        "name":"CT55B2-7",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0269135851,47.4018965146 ]
+      },
+      "properties": {
+        "name":"CT55B2-8",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0335365725,47.4020106168 ]
+      },
+      "properties": {
+        "name":"CT55B2-9",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.04015956,47.4021237187 ]
+      },
+      "properties": {
+        "name":"CT55B2-10",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0138377548,47.3971712825 ]
+      },
+      "properties": {
+        "name":"CT55B2-11",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.020459742,47.3972853849 ]
+      },
+      "properties": {
+        "name":"CT55B2-12",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0270817293,47.3973994871 ]
+      },
+      "properties": {
+        "name":"CT55B2-13",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0337037166,47.3975135891 ]
+      },
+      "properties": {
+        "name":"CT55B2-14",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0403257041,47.3976276909 ]
+      },
+      "properties": {
+        "name":"CT55B2-15",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0140058984,47.3926742547 ]
+      },
+      "properties": {
+        "name":"CT55B2-16",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0206278856,47.392789357 ]
+      },
+      "properties": {
+        "name":"CT55B2-17",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0272498728,47.3929034591 ]
+      },
+      "properties": {
+        "name":"CT55B2-18",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0338708602,47.393017561 ]
+      },
+      "properties": {
+        "name":"CT55B2-19",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0404928476,47.3931306627 ]
+      },
+      "properties": {
+        "name":"CT55B2-20",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0207960286,47.3882933288 ]
+      },
+      "properties": {
+        "name":"CT55B2-22",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0274170159,47.3884074307 ]
+      },
+      "properties": {
+        "name":"CT55B2-23",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0340380032,47.3885205325 ]
+      },
+      "properties": {
+        "name":"CT55B2-24",
+        "type": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ 19.0406589905,47.3886346341 ]
+      },
+      "properties": {
+        "name":"CT55B2-25",
+        "type": 1
+      }
+    }    
+  ]
+})
 
 export const dailyData = writable({
   "type": "FeatureCollection",
