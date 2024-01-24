@@ -24,12 +24,17 @@
       options={{ minZoom: 7, maxZoom: 19, attribution: '&copy; ESRI'}}
     />
     <TileLayer
+      name={'Google'}
+      url={'https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga'}
+      options={{ minZoom: 7, maxZoom: 21, attribution: '&copy; Google Maps'}}
+    />     
+    <TileLayer
       name={'Túristautak'}
       url={'https://{s}.map.turistautak.hu/tiles/turistautak/{z}/{x}/{y}.png'}
       options={{ minZoom:7, maxZoom:18, attribution: '&copy; Túristautak.hu'}}
     />
 
-    <GeoJson name={"GPS"} data={$CT55B2}/>
+    <GeoJson data={CT55B2}/>
   
   </Layers>
     

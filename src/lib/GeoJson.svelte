@@ -1,25 +1,15 @@
 <script>
   
   import L from 'leaflet';
-  import {hasContext, getContext, onMount, onDestroy, createEventDispatcher} from 'svelte';
+  import { getContext, onMount, onDestroy} from 'svelte';
   import '$lib/l.ellipse.min';
-  //import {latLngToLatLngArray, pointToCircle, pointsToEllipse} from '$lib/GeoDrawing.js';
-  import {mapState} from '$lib/store';
   
-  export let name="";
   export let data = [];
-
-  const dispatch = createEventDispatcher();
   
   let geojson;
   let geojsonElement;
 
-    /** @param {LatLng} cor @return {LngLatArr} */
-    export const latLngToLatLngArray=(cor)=> trimCoordArray([cor.lat, cor.lng]);
-
   const map = getContext(L.Map);
-  const subgroup = getContext('subGroup');
-  const clustered = hasContext(L.FeatureGroup);
 
   const popupContent = (d)=>{
     if(d){
@@ -31,17 +21,13 @@
 
   const options = {
     onEachFeature: (feature, layer)=> {
-      layer.bindPopup(popupContent(feature.properties),{
-        closeButton: false,
-        offset: L.point({x:0, y:-5}),
-        maxWidth: 200       
-      })      
-      .on('contextmenu', (e)=> {
-        dispatch('openContextMenu', {
-          id: feature.properties.id,
-          pos: latLngToLatLngArray(e.latlng)
+      if(feature.properties.type>0){
+        layer.bindPopup(popupContent(feature.properties),{
+          closeButton: false,
+          offset: L.point({x:0, y:-5}),
+          maxWidth: 200       
         })
-      })
+      }
     },
 
     pointToLayer: (feature, latlng)=>{
@@ -56,68 +42,59 @@
 
     style: (feature)=>{
       switch (feature.properties.type) {
-        case 0:
-          return {
-            fillColor: 'yellowgreen',
-            radius: 7,
-            color: 'black',
-            weight: 2,
-            opacity: 1.0,
-            fillOpacity: 0.4
-          };
         case 1:
           return {
             fillColor: 'yellow',
-            radius: 7,
-            color: 'red',
+            radius: 4,
+            color: 'green',
             weight: 1,
             opacity: 1.0,
-            fillOpacity: 1.0
+            fillOpacity: 0.3
           };
         case 2:
           return {
-            fillColor: 'yellowgreen',
-            radius: 7,
-            color: 'lime',
-            weight: 5,
+            fillColor: 'red',
+            radius: 4,
+            color: 'red',
+            weight: 1,
             opacity: 1.0,
-            fillOpacity: 0.5
+            fillOpacity: 0.3
           };
         case 3:
           return {
-            fillColor: 'cyan',
-            radius: 7,
+            fillColor: 'red',
+            radius: 4,
+            color: 'red',
+            weight: 1,
+            opacity: 1.0,
+            fillOpacity: 0.6
+          };
+        case 4:
+          return {
+            fillColor: 'blue',
+            radius: 4,
+            color: 'blue',
+            weight: 1,
+            opacity: 1.0,
+            fillOpacity: 0.2
+          };
+        case 5:
+          return {
+            fillColor: 'yellow',
+            radius: 4,
             color: 'red',
             weight: 1,
             opacity: 1.0,
             fillOpacity: 0.5
           };
-        case 4:
-          return {
-            fillColor: 'red',
-            radius: 7,
-            color: 'black',
-            weight: 1,
-            opacity: 1.0,
-            fillOpacity: 0.5
-          };
-        case 5:
-          return {
-            fillColor: 'cyan',
-            radius: 5,
-            color: 'blue',
-            weight: 1,
-            opacity: 1.0,
-            fillOpacity: 1.0
-          };
         case 6:
           return {
-            fillColor: 'cyan',
-            radius: 3,
-            color: 'blue',
+            fillColor: 'green',
+            radius: 4,
+            color: 'green',
             weight: 1,
             opacity: 1.0,
-            fillOpacity: 1.0
+            fillOpacity: 0.3
           };
         default:
           break;
@@ -129,28 +106,14 @@
   onMount(()=> {
     if(map()){
       geojson = L.geoJSON(data, options);
-      if(clustered){
-        geojson.addTo(subgroup());
-        if($mapState.overlays.includes(name)){
-          subgroup().addTo(map());    
-        }
-      }else{
-        geojson.addTo(map());
-      }
+      geojson.addTo(map());
     }
   });
 
   onDestroy(()=>{
-    clustered && subgroup().remove();
     geojson.remove();
     geojson = undefined;
   });
-
-  $: {
-    clustered && geojson && subgroup().removeLayer(geojson);
-    geojson && geojson.clearLayers().addData(data);
-    clustered && geojson && subgroup().addLayer(geojson);
-  }
 
 </script>
 
@@ -171,6 +134,7 @@
     padding: 0px;
     margin: 0px;
     background-color: yellow;
+    width: auto;
   }
   :global(.leaflet-popup-tip) {
     background-color: yellow;
