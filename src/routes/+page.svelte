@@ -35,8 +35,8 @@
 <div class="flex flex-col justify-start items-center h-screen mt-8">
   <h1 class="font-bold text-5xl">CT55B2</h1>
 
-  <div class="flex mt-8 gap-4 items-start">
-    <button class=" px-2 py-1 border-2 border-gray-500 rounded-md bg-yellow-200" on:click={geoLocation}>Geo</button>
+  <div class="flex flex-col mt-8 gap-4 items-start">
     <textarea class="px-2 py-1 border-2 border-gray-500 rounded-md row-auto min-h-72 min-w-80">{res}</textarea>
+    <button class=" px-2 py-1 border-2 border-gray-500 rounded-md bg-yellow-200" on:click={geoLocation}>Find position</button>
   </div>
 </div>
