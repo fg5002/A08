@@ -10,7 +10,7 @@
     }, error => {
       res = `${res}\n${locationError(error)}`;
     }, {
-      timeout: 2000,
+      timeout: 15000,
       maximumAge: 10000,
       enableHighAccuracy: true
     })
