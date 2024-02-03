@@ -11,7 +11,7 @@
       res = `${res}\n${locationError(error)}`;
     }, {
       timeout: 15000,
-      maximumAge: 10000,
+      maximumAge: 5000,
       enableHighAccuracy: true
     })
   }
