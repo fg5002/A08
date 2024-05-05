@@ -1,44 +1,67 @@
 <script>
-  import Leaflet from "$lib/Leaflet.svelte";
-  import Scale from '$lib/Scale.svelte';
-  import Layers from "$lib/Layers.svelte";
-  import TileLayer from "$lib/TileLayer.svelte";
-  import GeoJson from "$lib/GeoJson.svelte";
-  import {CT55B2} from '$lib/store';
 
+  let res = "";
+  let pon = 0;
+  let idx = 0;
+  let tx = 0;
+  
+  const geoLocation = ()=>{
+    navigator.geolocation.getCurrentPosition(position => {
+      const cor = [ position.coords.latitude, position.coords.longitude ];
+      cor.map(s=>parseFloat(s).toFixed(6));
+      pon = parseFloat(position.coords.accuracy.toFixed(2));
+      switch (true) {
+        case pon < 5:
+          tx = "Excellent"
+          break;
+        case pon >5 && pon < 50:
+          tx = "GOD"
+          break;
+        case pon > 50:
+          tx = "BAD"
+          break;      
+        default:
+          break;
+      }
+      if(idx<5){
+        res += `${cor[0]},${cor[1]}\n${tx} (${pon})\n`;
+      }else{
+        res = `${cor[0]},${cor[1]}\n${tx} (${pon})\n`;
+        idx = 0;
+      }
+      idx++
+    }, error => {
+      res = `${locationError(error)}\n`;
+    }, {
+      timeout: 15000,
+      maximumAge: 1000,
+      enableHighAccuracy: true
+    })
+  }
+    
+  function locationError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            return "User denied the request for geolocation.";
+        case error.POSITION_UNAVAILABLE:
+            return "Location information is currently unavailable.";
+        case error.TIMEOUT:
+            return "Request for user location timed out.";
+        case error.UNKNOWN_ERROR:
+            return "An unknown error occurred.";
+    }
+}
+
+      
 </script>
 
+<div class="flex flex-col justify-start items-center h-[80wh] mt-8">
+  <h1 class="font-bold text-5xl">CT55B2</h1>
 
-<Leaflet>
-                  
-  <Layers>      
-    <TileLayer
-      name={'OSM'}
-      url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'}
-      options={{ minZoom: 7, maxZoom: 19, attribution: '&copy; OpenstreetMap'}}
-      selected
-    />          
-    <TileLayer
-      name={'Esri'}
-      url={'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'}
-      options={{ minZoom: 7, maxZoom: 19, attribution: '&copy; ESRI'}}
-    />
-    <TileLayer
-      name={'Google'}
-      url={'https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga'}
-      options={{ minZoom: 7, maxZoom: 21, attribution: '&copy; Google Maps'}}
-    />     
-    <TileLayer
-      name={'Túristautak'}
-      url={'https://{s}.map.turistautak.hu/tiles/turistautak/{z}/{x}/{y}.png'}
-      options={{ minZoom:7, maxZoom:18, attribution: '&copy; Túristautak.hu'}}
-    />
-
-    <GeoJson data={CT55B2}/>
-  
-  </Layers>
-    
-  <Scale/>
-    
-</Leaflet>
-  
+  <!--div class="flex flex-col mt-8 gap-4 items-start h-[70vh] w-[80vw] overflow-y-auto">
+    <textarea 
+      class="px-2 py-1 text-lg border-2 border-gray-500 rounded-md row-auto h-full w-full font-bold {tx == "BAD" ? 'text-red-500' : tx === "GOOD" ? 'text-orange-300' : 'text-green-400'}"
+    >{res}</textarea>
+    <button class=" px-2 py-1 border-2 border-gray-500 rounded-md bg-yellow-200" on:click={geoLocation}>Find position</button>
+  </div-->
+</div>
