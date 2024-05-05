@@ -66,7 +66,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-03</b><br/>Belépés csak a tulajdonos előzetes engedélyével.<br/><br/>(Nappal az ugyanott lévő Csúti templomrom szabadon látogatható.)",
-        type: 2
+        type: 3
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -87,7 +87,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-04</b><br/>A belépéshez írásbeli kérelem szükséges.<br/>Herczeg Katalin herczeg.katalin@bfvk.hu",
-        type: 2
+        type: 5
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -171,7 +171,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-08</b><br/>A belépéshez írásbeli kérelem szükséges.<br/>Herczeg Katalin herczeg.katalin@bfvk.hu",
-        type: 2
+        type: 3
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -192,7 +192,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-09</b><br/>A belépéshez írásbeli kérelem szükséges.<br/>Herczeg Katalin herczeg.katalin@bfvk.hu",
-        type: 2
+        type: 3
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -234,7 +234,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-11</b><br/>Még nem néztem.",
-        type: 5
+        type: 6
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -255,7 +255,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-12</b><br/>A belépéshez írásbeli kérelem szükséges.<br/>Herczeg Katalin herczeg.katalin@bfvk.hu<br/><br/>A rétisasok zavarása miatt kihagynám.",
-        type: 3
+        type: 2
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -276,7 +276,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-13</b><br/>A belépéshez írásbeli kérelem szükséges.<br/>Herczeg Katalin herczeg.katalin@bfvk.hu<br/><br/>A rétisasok zavarása miatt kihagynám.",
-        type: 3
+        type: 2
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -318,7 +318,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-15</b><br/>Vízmű védterület",
-        type: 6
+        type: 1
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -360,7 +360,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-17</b><br/>A belépéshez írásbeli kérelem szükséges.<br/>Herczeg Katalin herczeg.katalin@bfvk.hu<br/><br/><br/>A rétisasok zavarása miatt kihagynám.",
-        type: 3
+        type: 2
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -402,7 +402,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-19</b><br/>Vízmű védterület",
-        type: 6
+        type: 1
       },
       "geometry":{
         "type": "GeometryCollection",
@@ -444,7 +444,7 @@ export const CT55B2 = {
       "type": "Feature",
       "properties": {
         "name":"<b>CT55B2-22</b><br/>Vízmű védterület",
-        type: 6
+        type: 1
       },
       "geometry":{
         "type": "GeometryCollection",

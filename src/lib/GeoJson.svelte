@@ -44,21 +44,21 @@
       switch (feature.properties.type) {
         case 1:
           return {
-            fillColor: 'yellow',
+            fillColor: 'yellowgreen',
             radius: 4,
             color: 'green',
-            weight: 1,
+            weight: 2,
             opacity: 1.0,
-            fillOpacity: 0.3
+            fillOpacity: 0.7
           };
         case 2:
           return {
-            fillColor: 'red',
+            fillColor: 'grey',
             radius: 4,
-            color: 'red',
+            color: 'black',
             weight: 1,
             opacity: 1.0,
-            fillOpacity: 0.3
+            fillOpacity: 0.5
           };
         case 3:
           return {
@@ -80,21 +80,21 @@
           };
         case 5:
           return {
-            fillColor: 'yellow',
+            fillColor: 'violet',
             radius: 4,
-            color: 'red',
-            weight: 1,
+            color: 'black',
+            weight: 2,
             opacity: 1.0,
             fillOpacity: 0.5
           };
         case 6:
           return {
-            fillColor: 'green',
+            fillColor: 'orange',
             radius: 4,
-            color: 'green',
-            weight: 1,
+            color: 'red',
+            weight: 2,
             opacity: 1.0,
-            fillOpacity: 0.3
+            fillOpacity: 0.7
           };
         default:
           break;
